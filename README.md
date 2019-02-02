@@ -1,6 +1,7 @@
 # ClickHouse Exporter for Prometheus
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/hot-wifi/clickhouse_exporter)](https://goreportcard.com/report/github.com/hot-wifi/clickhouse_exporter)
+[![Docker Hub](https://images.microbadger.com/badges/version/hotwifi/clickhouse_exporter.svg)](https://microbadger.com/images/hotwifi/clickhouse_exporter)
 
 ## Building and Running
 
