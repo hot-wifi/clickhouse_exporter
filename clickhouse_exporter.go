@@ -9,6 +9,7 @@ import (
 
 	"github.com/jmoiron/sqlx"
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 	"github.com/prometheus/client_golang/prometheus"
 
 	_ "github.com/kshvakov/clickhouse"
@@ -34,6 +35,12 @@ func main() {
 
 	e.Debug = cfg.Debug
 	e.HideBanner = !e.Debug
+
+	e.Use(middleware.Recover())
+
+	if cfg.Debug {
+		e.Use(middleware.Logger())
+	}
 
 	c := collector.NewClickHouseCollector(db)
 
