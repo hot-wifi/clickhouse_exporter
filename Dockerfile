@@ -10,7 +10,7 @@ RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 
 RUN go get -d -v ./...
-RUN go build -v ./cmd/clickhouse_exporter
+RUN go build -v .
 
 FROM alpine:3.8
 
